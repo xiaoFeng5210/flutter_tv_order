@@ -112,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text('你好，世界！', style: Theme.of(context).textTheme.labelMedium)
           ],
         ),
       ),
