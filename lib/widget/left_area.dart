@@ -15,7 +15,7 @@ class LeftContainer extends StatelessWidget {
       width: 350,
       height: 350,
       decoration: BoxDecoration(
-        color: leftTheme,
+        // color: leftTheme,
         borderRadius: BorderRadius.circular(20), // 调整圆角大小
       ),
     );
