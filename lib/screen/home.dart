@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            flex: 2, child: Center(child: LeftContainer(leftTheme: leftTheme))),
+            flex: 1, child: Center(child: LeftContainer(leftTheme: leftTheme))),
         Expanded(flex: 1, child: RightContainer())
       ],
     );
