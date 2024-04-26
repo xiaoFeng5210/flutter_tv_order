@@ -27,8 +27,10 @@ class RightContainer extends StatelessWidget {
             Text(" I am Jack "),
           ],
         ),
-        Expanded(child: Container(color: theme,
-          
+        Expanded(
+            child: Container(
+          color: theme,
+          // child: ,
         ))
       ],
     );
