@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     const String appTitle = 'Boil Billboard';
     return MaterialApp(
       title: appTitle,
+      theme: ThemeData(useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(
             title: const Text(appTitle),
