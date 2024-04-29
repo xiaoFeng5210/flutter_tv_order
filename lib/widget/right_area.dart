@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class RightContainer extends StatelessWidget {
-  const RightContainer({
-    super.key,
-  });
+  int num = 0;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme.primaryContainer;
+    void press() {
+      print(num);
+      num++;
+    }
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -32,7 +34,9 @@ class RightContainer extends StatelessWidget {
         Contents(),
         Row(
           children: [
-            Text("哈喽哈喽"),
+            Text("数字：$num"),
+            SizedBox(width: 10),
+            ElevatedButton(onPressed: press, child: Text("我是一个按钮"))
           ],
         )
       ],
@@ -54,7 +58,8 @@ class Contents extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("我是小风"),
+          Text("lebai"),
+          SizedBox(width: 10),
           Icon(Icons.access_alarm, size: 30, color: Colors.teal.shade500)
         ],
       ),
