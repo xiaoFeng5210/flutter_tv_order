@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class RightContainer extends StatelessWidget {
-  int num = 0;
+final numProvider = StateProvider<int>((ref) => 2);
 
+class RightContainer extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).colorScheme.primaryContainer;
+
+    int num = ref.watch(numProvider);
+
     void press() {
-      print(num);
-      num++;
+      ref.read(numProvider.notifier).update((state) => state + 1);
+    }
+
+    void onReduced() {
+      final reader = ref.read(numProvider.notifier);
+      if (reader.state > 1) {
+        reader.update((state) => state - 1);
+      }
     }
 
     return Column(
@@ -36,7 +47,9 @@ class RightContainer extends StatelessWidget {
           children: [
             Text("数字：$num"),
             SizedBox(width: 10),
-            ElevatedButton(onPressed: press, child: Text("我是一个按钮"))
+            ElevatedButton(onPressed: press, child: Text("add")),
+            SizedBox(width: 10),
+            ElevatedButton(onPressed: onReduced, child: Text("reduce"))
           ],
         )
       ],

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import './screen/home.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-final helloWorldProvider = Provider<String>((ref) {
-  return 'Hello world';
-});
+import './riverpods/global.dart';
 
 void main() => runApp(
       ProviderScope(
@@ -18,7 +14,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String appTitle = ref.watch(helloWorldProvider);
+    final String appTitle = ref.watch(appTitleProvider);
     return MaterialApp(
       title: appTitle,
       theme: ThemeData(useMaterial3: true),
