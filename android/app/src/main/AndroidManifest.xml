@@ -29,6 +29,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility?hl=en and
@@ -38,6 +40,7 @@
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <action android:name="android.intent.action.TTS_SERVICE" />
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
