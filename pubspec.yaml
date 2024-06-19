@@ -16,7 +16,7 @@ dependencies:
   provider: ^6.0.0
   flutter_riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
-  flutter_tts: ^4.0.2
+  # audioplayers: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +30,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/mp3/开启语音.mp3
